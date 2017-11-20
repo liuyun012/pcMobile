@@ -3,7 +3,7 @@
  * @Date:   2017-11-18
  * @Filename: webpack.prod.conf.js
  * @Last modified by:   qinzhenxing
- * @Last modified time: 2017-11-19
+ * @Last modified time: 2017-11-20
  */
 
 'use strict'
@@ -150,7 +150,6 @@ if (config.build.bundleAnalyzerReport) {
 //构建生成多页面的HtmlWebpackPlugin配置，主要是循环生成
 var pages =  utils.getMultiEntry('./src/'+config.moduleName+'/**/*.html');
 for (var pathname in pages) {
-  console.log(pathname);
   var conf = {
     filename: pathname + '.html',
     template: pages[pathname], // 模板路径
