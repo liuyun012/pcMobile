@@ -4,12 +4,20 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" type='image/x-icon' href='/static/favicon.ico' media='screen'>
-    <title>首页</title>
+    <title>电脑端首页</title>
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script type="text/javascript">
+      // 根据 navigator.userAgent ，区分运行环境是电脑端还是移动端，路由重定向
+      if(navigator.userAgent.match(/Android/i)||(navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
+          if (location.search.indexOf("?") == -1) {
+            window.location.href = '/phone.html';
+          }
+       }
+    </script>
   </body>
 </html>

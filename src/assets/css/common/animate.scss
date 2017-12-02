@@ -1,0 +1,65 @@
+// @Author: qinzhenxing
+// @Date:   2017-12-02
+// @Filename: animate.scss
+// @description: vue 页面切换的转场动画，或组件的 css3动画切换效果
+// @Last modified by:   qinzhenxing
+// @Last modified time: 2017-12-02
+
+/* 可以设置不同的进入和离开动画 ,设置持续时间和动画函数*/
+
+// 淡入淡出的效果
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+.fade-leave-active {
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0.01;
+}
+
+// slide 仿app转场动画 的效果
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  will-change: transform;
+  transition: all .5s;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+.slide-right-enter,
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+// animate.css 提取常用样式
+@keyframes slideDown {
+  from {
+    transform: translate(0, -30%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -30%);
+  }
+}

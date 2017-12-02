@@ -1,0 +1,15 @@
+// @Author: Qzx
+// @Date:   2017-12-02
+// @Filename: variable.scss
+// @description: 定义一些公用的变量，有利于以后相关的整体调整
+// @Last modified by:   qinzhenxing
+// @Last modified time: 2017-12-02
+
+// index.scss  web端变量样式
+$screen-width-pc: 1000px;                   // 屏幕有效宽度(中心区域)
+$imgUrl-pc: '../../assets/images/index/';   // 默认背景图片的路径
+$color-green-pc: #2ec75b;                   // 绿色
+$color-red-pc: #e06a5e;                     // 红色
+
+// phone.scss 移动端变量样式
+$imgUrl-h5: '../../assets/images/phone/';   // 默认背景图片的路径

@@ -1,34 +1,44 @@
 <template lang="html">
   <div id="app" class="">
     <transition :name="transitionName">
-      <router-view></router-view>
+      <router-view class="app-view"></router-view>
     </transition>
-    <!-- <NavCon /> -->
   </div>
 </template>
 
 <script>
-// import NavCon from '@/components/Nav'
 
 export default {
   name: 'app',
   data () {
     return {
-      transitionName: 'fade'
+      transitionName: 'slide-left'
     }
   },
-  components: {
-    // NavCon
+  watch: {
+    '$route' (to, from) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+    }
   }
 }
 </script>
 
 <style lang="scss">
   #app {
-    font-family: 'PingFangSC-Light', 'PingFangSC-Regular', 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    position: relative;
     width: 100vw;
     min-height: 100vh;
     font-size: 12px;
     line-height: 18px;
+    color: #333;
+    background-color: #f0f0f0;
+  }
+
+  .app-view {
+     position: absolute;
+     width: 100%;
   }
 </style>

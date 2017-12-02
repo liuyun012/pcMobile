@@ -1,0 +1,16 @@
+// @Author: Qzx
+// @Date:   2017-12-01
+// @Filename: phone.scss
+// @description: web端总样式文件
+// @Last modified by:   qinzhenxing
+// @Last modified time: 2017-12-02
+
+// 通用样式文件
+@import "./common/reset.scss";           // 重置浏览器样式
+@import "./common/mixins.scss";          // 常用scss mixins函数封装
+@import "./common/variable.scss";        // 项目变量设置
+@import "./common/animate.scss";         // <transition> 组件所用样式
+
+// 通用组件样式文件
+
+// 模块页面样式文件 -- 移动端h5
